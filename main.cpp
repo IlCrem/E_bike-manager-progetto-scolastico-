@@ -14,7 +14,7 @@ posizione utente;
 
 struct bici{
     int id;
-    float autonomia;
+    int autonomia;
     posizione pos;
     bool disponibile;
 };
