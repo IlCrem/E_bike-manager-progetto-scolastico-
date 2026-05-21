@@ -37,6 +37,8 @@ int main()
     bool bici_prenotabile=false;
     int velocità_media=20, ritardo=0;
     float importo, tempo=0;
+    int scelta;
+    do{
     do{
     cout<<"Inserisci coordinate posizione(X/Y)\n";
     cin>>utente.coord_x;
@@ -88,6 +90,7 @@ int main()
         e_bike[Pos_bici-1].disponibile=0;
     }
     }
+    
     ritardo=rand()%15+1;
     tempo=(((float)km_da_fare/velocità_media)*60)+ritardo;
     e_bike[Pos_bici-1].autonomia-=km_da_fare;
@@ -95,5 +98,11 @@ int main()
     cout<<"\nKm percorsi: "<<km_da_fare;
     cout<<"\nTempo totale: "<<tempo;
     cout<<"\nL'importo è di "<<importo<<" euro";
-    
+    cout<<"\nVuoi prenotare un'altra bici? (1-si/2-no) ";
+    cin>>scelta;
+    while(scelta!=2 && scelta!=1){
+        cout<<"\nReinserisci: ";
+        cin>>scelta;
+    }
+    }while (scelta==1);
 }
